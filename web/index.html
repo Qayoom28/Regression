@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRM Dashboard</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>CRM Dashboard</h1>
+      <p>Lead, customer, opportunity, and task management</p>
+    </header>
+
+    <section class="cards" id="summary"></section>
+
+    <main class="grid">
+      <section>
+        <h2>Create Lead</h2>
+        <form id="lead-form">
+          <input name="name" placeholder="Lead name" required />
+          <input name="email" placeholder="Email" required type="email" />
+          <input name="phone" placeholder="Phone" />
+          <button type="submit">Add Lead</button>
+        </form>
+      </section>
+
+      <section>
+        <h2>Create Customer</h2>
+        <form id="customer-form">
+          <input name="company_name" placeholder="Company" required />
+          <input name="primary_contact" placeholder="Primary contact" required />
+          <input name="email" placeholder="Email" required type="email" />
+          <button type="submit">Add Customer</button>
+        </form>
+      </section>
+
+      <section>
+        <h2>Create Opportunity</h2>
+        <form id="opp-form">
+          <input name="customer_id" placeholder="Customer ID" required type="number" />
+          <input name="title" placeholder="Opportunity title" required />
+          <input name="value" placeholder="Value" required type="number" step="0.01" />
+          <button type="submit">Add Opportunity</button>
+        </form>
+      </section>
+
+      <section>
+        <h2>Create Task</h2>
+        <form id="task-form">
+          <input name="title" placeholder="Task title" required />
+          <input name="owner" placeholder="Owner" required />
+          <button type="submit">Add Task</button>
+        </form>
+      </section>
+    </main>
+
+    <section>
+      <h2>Recent Leads</h2>
+      <table>
+        <thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Status</th></tr></thead>
+        <tbody id="leads-table"></tbody>
+      </table>
+    </section>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
